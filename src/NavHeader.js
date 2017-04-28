@@ -1,7 +1,7 @@
 import './NavHeader.css';
 import React, { Component, PropTypes as T } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom';
 
 import AuthService from './utils/AuthService';
 
@@ -61,15 +61,9 @@ class NavHeader extends Component {
       loginOrMenu = (
         <div>
           <Nav pullRight >
-            <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/mytrades">Requests by Me</RouterLink>
-            <RouterLink to="/tradesforme">Requests for Me</RouterLink>
-            <RouterLink to="/allbooks">All Books</RouterLink>
-            <RouterLink to="/mybooks">
-              {'My Books '}
-              <span className="myBook-icon glyphicon glyphicon-user" aria-hidden="true" />
-            </RouterLink>
-            <RouterLink to="/profile">{this.props.auth.getProfile().name} <span className="settings-icon glyphicon glyphicon-cog" aria-hidden="true"></span></RouterLink>
+            <RouterLink to="/addpic">+</RouterLink>
+            <RouterLink to="/mypics">My Pics</RouterLink>
+            <RouterLink to="/allpics">All Pics</RouterLink>
             <RouterLink to="/logout">Logout</RouterLink>
           </Nav>
       </div>);
@@ -85,7 +79,7 @@ class NavHeader extends Component {
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#">Picterest</a>
+            <Link to="/">Picterest</Link>
           </Navbar.Brand>
         </Navbar.Header>
         {loginOrMenu}

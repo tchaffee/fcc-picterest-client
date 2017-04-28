@@ -9,9 +9,6 @@ class Home extends Component {
         <div className="App-header">
           <h2>Welcome to Picterest</h2>
         </div>
-        <p className="App-intro">
-          Login to get started
-        </p>
       </div>
     );
   }

@@ -15,6 +15,7 @@ export default class AuthService extends EventEmitter {
         // redirectUrl: 'http://localhost:3000/login',
         responseType: 'token',
         sso: false,
+        params: { scope: 'openid name picture' }
       },
       autoclose: true
     })

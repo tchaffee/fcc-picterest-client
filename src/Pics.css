@@ -1,0 +1,33 @@
+.picContainer {
+  display: inline-block;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+  vertical-align: top;
+  position: relative;
+}
+
+.picItem {
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 0px;
+  width: 190px;
+}
+
+.userPic {
+  width: 24px;
+}
+
+
+/* It might seem like this belongs in DeletePic.css, but it's here because this is 
+  about how to position the button in relationship to the Picture being deleted.
+*/
+button.close {
+  float: none;
+  position: absolute;
+  left: 206px;
+  top: -1px;
+  vertical-align: top;
+}

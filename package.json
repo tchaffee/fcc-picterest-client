@@ -2,6 +2,7 @@
   "name": "fcc-picterest-client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8081",
   "dependencies": {
     "auth0-lock": "^10.14.0",
     "bootstrap": "^3.3.7",
@@ -9,6 +10,7 @@
     "react": "^15.5.4",
     "react-bootstrap": "^0.30.8",
     "react-dom": "^15.5.4",
+    "react-masonry-component": "^5.0.5",
     "react-router-dom": "^4.1.1"
   },
   "devDependencies": {

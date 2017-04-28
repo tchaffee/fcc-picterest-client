@@ -6,6 +6,11 @@ import NavHeader from './NavHeader';
 import Home from './Home';
 import Logout from './Logout';
 import Login from './Login';
+import Pics from './Pics';
+import AddPic from './AddPic';
+
+import { getAllPics, getMyPics, getUserPics, addPic, deletePic, likePic } from './models/picsModel';
+
 
 import AuthService from './utils/AuthService';
 const auth = new AuthService('xgk3Iwy5uWQt8tnzZjjIdrw0N2shXnug', 'tchaffee.auth0.com');
@@ -23,12 +28,13 @@ class App extends Component {
     super(props);
 
     this.state = {
-      redirectPath: false
+      redirectPath: false,
+      auth: auth
     };
 
+    window.auth = auth;
+
   }
-
-
 
   render() {
 
@@ -62,6 +68,10 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path='/login' render={routeProps => <Login {...routeProps} auth={auth} authenticatedRedirect="/" />} />
             <PrivateRoute path='/logout' component={Logout} auth={auth} redirectPath="/" />
+            <PrivateRoute path="/mypics" component={Pics} dataGetter={getMyPics} handleDelete={deletePic} handleLike={likePic} />
+            <PrivateRoute path="/allpics" component={Pics} dataGetter={getAllPics} handleLike={likePic} />
+            <PrivateRoute path="/addpic" component={AddPic} addPic={addPic} />
+            <PrivateRoute path="/pics/:userid" component={Pics} dataGetter={getUserPics} handleLike={likePic} handleDelete={deletePic} />
             <Route path='/notauthorized' component={NotAuthorized} />
             <Route path='*' component={NotFound} />
           </Switch>
